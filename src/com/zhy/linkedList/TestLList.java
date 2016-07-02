@@ -9,5 +9,29 @@ public class TestLList {
 		l.push("1");
 		l.push(2);
 		l.display();
+		l.insert(3, "1");
+		l.display();
+		System.out.println("remove");
+		l.remove(3);
+		l.display();
+		System.out.println("find");
+		System.out.println(l.find(3));
+	}
+	@Test
+	public void testDoublelyLList(){
+		DoublelyLList l=new DoublelyLList();
+		l.push(1);
+		l.push(2);
+		l.display();
+		l.dispalyReverse();
+		System.out.println("insert");
+		l.insert(3,1);
+		System.out.println("display");
+		l.display();
+		System.out.println("remove");
+		l.remove(3);
+		l.display();
+		System.out.println("find");
+		System.out.println(l.find(3));
 	}
 }
