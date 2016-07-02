@@ -14,6 +14,14 @@ public class LList {
 		return current;
 	}
 	
+	public Node findLast(){
+		Node current=this.head;
+		while(!(current.next==null)){
+			current=current.next;
+		}
+		return current;
+	}
+	
 	public Node findPrevious(Object item){
 		Node current=this.head;
 		while(!(current.next==null)){
@@ -35,10 +43,7 @@ public class LList {
 	}
 	
 	public void push(Object data){
-		Node current=this.head;
-		while(current.next!=null){
-			current=current.next;
-		}
+		Node current=findLast();
 		current.next=new Node(data);
 	}
 	
