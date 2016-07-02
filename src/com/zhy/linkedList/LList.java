@@ -8,7 +8,10 @@ public class LList {
 	
 	public Node find(Object item){
 		Node current=this.head;
-		while(current.data!=item && current.next!=null){
+		while(current.data!=item){
+			if(current.next == null) {
+				return null;
+			}
 			current=current.next;
 		}
 		return current;
@@ -24,7 +27,7 @@ public class LList {
 	
 	public Node findPrevious(Object item){
 		Node current=this.head;
-		while(!(current.next==null)){
+		while(!(current.next==null) && current.next.data!=item){
 			current=current.next;
 		}
 		return current;
@@ -49,7 +52,7 @@ public class LList {
 	
 	public void remove(Object item){
 		Node preNode=findPrevious(item);
-		if(!(preNode==null)){
+		if(!(preNode.next==null)){
 			preNode.next=preNode.next.next;
 		}
 	}
