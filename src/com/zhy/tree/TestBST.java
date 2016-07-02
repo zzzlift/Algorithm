@@ -17,5 +17,7 @@ public class TestBST {
 		System.out.println("Postorder traversal:");
 		bst.postOrder(bst.root);
 		bst.remove(23);
+		System.out.println("Postorder traversal:");
+		bst.postOrder(bst.root);
 	}
 }
