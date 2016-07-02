@@ -16,7 +16,7 @@ public class LList {
 	
 	public Node findPrevious(Object item){
 		Node current=this.head;
-		while(!(current.next==null) && (current.next.data !=item)){
+		while(!(current.next==null)){
 			current=current.next;
 		}
 		return current;
