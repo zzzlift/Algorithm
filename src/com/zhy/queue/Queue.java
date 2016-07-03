@@ -27,8 +27,8 @@ public class Queue {
 		push(item);
 	}
 	
-	public void dequeue(){
-		shift();
+	public Object dequeue(){
+		return shift();
 	}
 	
 	public Object peek(){
