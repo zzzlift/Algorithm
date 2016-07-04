@@ -41,4 +41,38 @@ public class TestGraph {
 		g.addEdge(2, 4);
 		g.dispaly();
 	}
+	
+	@Test
+	public void testdfs(){
+		Graph_AdjList_int2_dfs g=new Graph_AdjList_int2_dfs(6);
+		g.addEdge(1, 2);
+		g.addEdge(1, 3);
+		g.addEdge(2, 3);
+		g.addEdge(2, 4);
+		g.dfs(2);
+	}
+	
+	@Test
+	public void testbfs(){
+		Graph_AdjList_int2_dfs g=new Graph_AdjList_int2_dfs(6);
+		g.addEdge(1, 2);
+		g.addEdge(1, 3);
+		g.addEdge(2, 3);
+		g.addEdge(2, 4);
+		g.bfs(2);
+	}
+	
+	@Test
+	public void testpath(){
+		Graph_AdjList_int2_dfs g=new Graph_AdjList_int2_dfs(6);
+		g.addEdge(1, 2);
+		g.addEdge(1, 3);
+		g.addEdge(2, 3);
+		g.addEdge(2, 4);
+		g.addEdge(5, 4);
+		int s=2,t=5;
+		g.bfs(s);
+		g.showPath(g.pathTo(s, t));
+		
+	}
 }
