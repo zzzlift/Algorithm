@@ -39,4 +39,8 @@ public class Graph_AdjList_int2 {
 			System.out.println("");
 		}
 	}
+	
+	public void dfs(){
+		
+	}
 }
