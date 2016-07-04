@@ -1,5 +1,9 @@
 package com.zhy.graph;
-
+/**
+ * Graph的邻接矩阵实现
+ * @author Administrator
+ *
+ */
 public class Graph_AdjMat {
 //	private int[] vertics;
 	private int[][] adjMat;
