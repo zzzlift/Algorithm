@@ -1,5 +1,7 @@
 package com.zhy.sort;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class TestComparable {
@@ -22,5 +24,13 @@ public class TestComparable {
 //			System.out.println("after");
 		}
 		}
+	}
+	
+	@Test
+	public void testCopy(){
+		int[] a={1,2,3};
+		int[] b=Arrays.copyOfRange(a, 0, 1);
+		System.out.println(b.length);
+		System.out.println(Arrays.toString(b));
 	}
 }
