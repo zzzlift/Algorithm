@@ -58,6 +58,10 @@ public class HeapSort {
 			
 			maxHeapify(aheap, 0);
 			//你每执行完一次都要把排列的那一小段覆盖原来的a才行
+			/*
+			 * 你这里也可以改造heapSort函数，加上两个index，就能保证调用的
+			 * 是同一个栈内存中的数组了，但是我们不改了，太麻烦
+			 */
 			for(int j=0;j<aheap.length;j++){
 				a[j]=aheap[j];
 			}
