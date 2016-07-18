@@ -70,6 +70,7 @@ public class DFAStringMatcher {
 		//先判断第一个字符a是否和p[k]相等
 //		System.out.println("a:"+a);
 		//状态总是比字母靠后一个, k状态对应的转化字母是p[k-1]
+		//如果一上来就是0状态，epsilon看作是所有字符串的后缀
 		if(k==0){
 			return true;
 		}
