@@ -1,5 +1,10 @@
 package com.zhy.string;
-
+/**
+ * DFA使用的是后缀
+ * KMP使用的是前缀
+ * @author Administrator
+ *
+ */
 public class DFAStringMatcher {
 	
 	private static final int NO_OF_CHARS=256;
