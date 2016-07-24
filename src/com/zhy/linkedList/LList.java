@@ -2,6 +2,14 @@ package com.zhy.linkedList;
 
 public class LList {
 	private Node head;
+	public Node getHead() {
+		return head;
+	}
+
+	public void setHead(Node head) {
+		this.head = head;
+	}
+
 	public LList(){
 		this.head=new Node("head");
 	}
@@ -55,6 +63,26 @@ public class LList {
 		if(!(preNode.next==null)){
 			preNode.next=preNode.next.next;
 		}
+	}
+	
+	public void reverseList(){
+		if(head==null||head.next==null){
+			return;
+		}
+		Node pre=head;
+		Node current=head.next;
+		Node next;
+		while(null!=current){
+			next=current.next;
+			current.next=pre;
+			pre=current;
+			current=next;
+		}
+		head.next=null;
+		//别忘了将原链表头结点的next设为null，否则链表就会
+		/*<------,-------->,<--------,---------->无限循环下去来回折返
+		*/
+		head=pre;
 	}
 	
 	public void display(){
