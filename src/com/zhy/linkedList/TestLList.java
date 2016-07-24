@@ -50,4 +50,14 @@ public class TestLList {
 		System.out.println("find");
 		System.out.println(l.find(3));
 	}
+	@Test
+	public void testReverseList(){
+		LList l=new LList();
+		l.push("1");
+		l.push(2);
+		l.push(3);
+		l.display();
+		l.reverseList();
+		l.display();
+	}
 }
