@@ -33,10 +33,10 @@ public class InsertionSort {
 	}
 	
 	public static void main (String args[]){
-		int[] a={2,4,1,5,7,0,3};
+		int[] a={5,2,4};
 		float[] b={(float) 0.2,(float) 0.3,(float) 0.15};
-		insertionSortF(b);
 		insertionSort(a);
+		insertionSortF(b);
 		System.out.println(Arrays.toString(a));
 		System.out.println(Arrays.toString(b));
 	}
