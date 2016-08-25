@@ -97,9 +97,9 @@ public class LongestCommonSubsequence {
 						j=j-1;
 						break;
 					default:
+						j=j-1;
 						break;
 				}
-				
 			}
 		}
 		System.out.println("the result:");
