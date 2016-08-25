@@ -1,6 +1,9 @@
 package com.zhy.string;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,7 +16,7 @@ public class LongestCommonSubsequence {
 		 * b is a trace back matrix 1 for top left corner, 2 for up, 3 for left
 		 */
 		int[][] b=new int[m][n];
-		fill(b,0);
+//		fill(b,0);
 		int[][] c=new int[m][n];
 //		fill(c, 0);
 		for(int i=1;i<m;i++){
@@ -48,7 +51,6 @@ public class LongestCommonSubsequence {
 		for(int i=0;i<row;i++){
 			System.out.println();
 				for(int j=0;j<col;j++){
-//				System.out.println("i "+i+" j "+j);
 				System.out.print(m[i][j]+"\t");		
 			}
 		}
@@ -64,10 +66,10 @@ public class LongestCommonSubsequence {
 		}
 	}
 	
-	public static List<String> backTracking(int[][] b,String[] y){
+	public static Deque<String> backTracking(int[][] b,String[] y){
 		int col=b[0].length;
 		int row=b.length;
-		List<String> res=new ArrayList<String>();
+		Deque<String> res=new ArrayDeque<String>();
 		System.out.println("\n\nfrom:");
 		for(String e:y){
 			System.out.print(e+"\t");
@@ -75,24 +77,24 @@ public class LongestCommonSubsequence {
 		System.out.println("\n\n");
 		int i=row-1;
 		int j=col-1;
-		Set<String> lSet=new LinkedHashSet<String>();
 		while(i>0){
 			while(j>0){
 				int be=b[i][j];
 //				System.out.println("i "+i+" j "+j);
 				switch(be){
 					case 1:
-						res.add(y[j]);
+						/*
+						 * offer is queue, push is stack
+						 */
+						res.push(y[j]);
 						i=i-1;
 						j=j-1;
-//						
 						break;
 					case 2:
 						i=i-1;
 						break;
 					case 3:
 						j=j-1;
-//						System.out.println(y[j]);
 						break;
 					default:
 						break;
@@ -101,8 +103,9 @@ public class LongestCommonSubsequence {
 			}
 		}
 		System.out.println("the result:");
-		for(String e:res){
-			System.out.print(e+"\t");
+		Iterator it=res.iterator();
+		while(it.hasNext()){
+			System.out.print(it.next()+"\t");
 		}
 		return res;
 	}
