@@ -68,7 +68,7 @@ public class LongestCommonSubsequence {
 		int col=b[0].length;
 		int row=b.length;
 		List<String> res=new ArrayList<String>();
-		System.out.println("\n\nback:");
+		System.out.println("\n\nfrom:");
 		for(String e:y){
 			System.out.print(e+"\t");
 		}
@@ -79,10 +79,9 @@ public class LongestCommonSubsequence {
 		while(i>0){
 			while(j>0){
 				int be=b[i][j];
-				System.out.println("i "+i+" j "+j);
+//				System.out.println("i "+i+" j "+j);
 				switch(be){
 					case 1:
-//						System.out.println(y[j]);
 						res.add(y[j]);
 						i=i-1;
 						j=j-1;
@@ -101,8 +100,9 @@ public class LongestCommonSubsequence {
 				
 			}
 		}
+		System.out.println("the result:");
 		for(String e:res){
-			System.out.println(e);
+			System.out.print(e+"\t");
 		}
 		return res;
 	}
