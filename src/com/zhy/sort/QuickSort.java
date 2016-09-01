@@ -1,7 +1,13 @@
 package com.zhy.sort;
 
 import java.util.Arrays;
-
+/**
+ * the whole procedure operates the same and only array int[] a in the memory
+ * so every step is to swap the uncomfortable element pair
+ * after the procedure finish, every element in the comfortable place
+ * @author Administrator
+ *
+ */
 public class QuickSort extends Sort{
 	public static void quickSort(int[] a,int p,int r){
 		if(p<r){
