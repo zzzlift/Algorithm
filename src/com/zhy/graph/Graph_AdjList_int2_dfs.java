@@ -72,7 +72,12 @@ public class Graph_AdjList_int2_dfs {
 	public void bfs(int s){
 		ArrayDeque q=new ArrayDeque();
 		this.marked[s]=1;
-		q.push(s);
+		/*
+		 * offer+poll
+		 * push+pop
+		 * don't mess up
+		 */
+		q.offer(s);
 		while(!q.isEmpty()){
 			Object v=q.poll();
 			System.out.println((int)v);
@@ -80,7 +85,7 @@ public class Graph_AdjList_int2_dfs {
 				if(this.marked[(int)v1]==0){
 					this.edgeTo[(int)v1]=(int)v;
 					this.marked[(int)v1]=1;
-					q.push(v1);
+					q.offer(v1);
 				}
 			}
 		}
