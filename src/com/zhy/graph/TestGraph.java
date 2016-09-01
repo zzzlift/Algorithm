@@ -44,22 +44,26 @@ public class TestGraph {
 	
 	@Test
 	public void testdfs(){
-		Graph_AdjList_int2_dfs g=new Graph_AdjList_int2_dfs(6);
+		Graph_AdjList_int2_dfs g=new Graph_AdjList_int2_dfs(8);
 		g.addEdge(1, 2);
 		g.addEdge(1, 3);
-		g.addEdge(2, 3);
 		g.addEdge(2, 4);
-		g.dfs(2);
+		g.addEdge(2, 5);
+		g.addEdge(3, 6);
+		g.addEdge(3, 7);
+		g.dfs(1);
 	}
 	
 	@Test
 	public void testbfs(){
-		Graph_AdjList_int2_dfs g=new Graph_AdjList_int2_dfs(6);
+		Graph_AdjList_int2_dfs g=new Graph_AdjList_int2_dfs(8);
 		g.addEdge(1, 2);
 		g.addEdge(1, 3);
-		g.addEdge(2, 3);
 		g.addEdge(2, 4);
-		g.bfs(2);
+		g.addEdge(2, 5);
+		g.addEdge(3, 6);
+		g.addEdge(3, 7);
+		g.bfs(1);
 	}
 	
 	@Test
