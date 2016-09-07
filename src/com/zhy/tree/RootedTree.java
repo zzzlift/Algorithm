@@ -22,7 +22,13 @@ public class RootedTree {
 		return root;
 
 	}
-
+	/**
+	 * build rooted tree
+	 * @param root each parent node you delivered
+	 * @param indexArray the array you want to build tree
+	 * @param level the highest level of the tree you expected
+	 * @param cLevel the current level of the root node
+	 */
 	private void buildTree(RNode root, int[] indexArray, int level, int cLevel) {
 		int[] a = ArrayUtils.removeElement(indexArray, root.data);
 		int n = a.length;
@@ -42,8 +48,8 @@ public class RootedTree {
 
 	public static void main(String[] args) {
 		RootedTree rt = new RootedTree();
-		int[] a = { 1, 2, 3, 4 };
-		RNode root = rt.buildRootedTree(a, 2);
+		int[] a = { 1, 2, 3, 4,5,6 };
+		RNode root = rt.buildRootedTree(a, 4);
 		rt.printTree(root);
 	}
 
