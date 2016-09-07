@@ -22,15 +22,9 @@ public class RootedTree {
 		return root;
 
 	}
-	/**
-	 * build rooted tree
-	 * @param root each parent node you delivered
-	 * @param indexArray the array you want to build tree
-	 * @param level the highest level of the tree you expected
-	 * @param cLevel the current level of the root node
-	 */
+
 	private void buildTree(RNode root, int[] indexArray, int level, int cLevel) {
-		int[] a = ArrayUtils.removeElement(indexArray, root.data);
+		int[] a = ArrayUtils.removeElement(indexArray, (int) root.data);
 		int n = a.length;
 		cLevel++;
 		if (cLevel > level)
@@ -48,8 +42,8 @@ public class RootedTree {
 
 	public static void main(String[] args) {
 		RootedTree rt = new RootedTree();
-		int[] a = { 1, 2, 3, 4,5,6 };
-		RNode root = rt.buildRootedTree(a, 4);
+		int[] a = { 1, 2, 3, 4 };
+		RNode root = rt.buildRootedTree(a, 2);
 		rt.printTree(root);
 	}
 
@@ -70,12 +64,16 @@ public class RootedTree {
 	}
 }
 
-class RNode {
-	public int data;
+class RNode<T> {
+	/*
+	 * if you use Object, then you will cast each time very boring
+	 * using generic no need to cast
+	 */
+	public T data;
 	public RNode leftChild;
 	public RNode rightSibling;
 
-	public RNode(int data) {
+	public RNode(T data) {
 		this.data = data;
 		this.leftChild = null;
 		this.rightSibling = null;

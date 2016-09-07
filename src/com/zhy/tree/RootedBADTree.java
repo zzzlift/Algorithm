@@ -31,7 +31,7 @@ public class RootedBADTree {
 	 * @param th the th node in every level. the children of th node is concerned with the th 
 	 */
 	private void buildTree(RNode root, int[] indexArray, int level, int cLevel,int th) {
-		int[] a = ArrayUtils.removeElement(indexArray, root.data);
+		int[] a = ArrayUtils.removeElement(indexArray, (int)root.data);
 		int n = a.length;
 		cLevel++;
 		if (cLevel > level)
